@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Abyssinica+SIL&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-leather-50: #f6f4f0;
+  --color-leather-100: #eae1d7;
+  --color-leather-200: #d6c5b2;
+  --color-leather-300: #bea086;
+  --color-leather-400: #a67b5b;
+  --color-leather-500: #9c7156;
+  --color-leather-600: #865b48;
+  --color-leather-700: #6c463c;
+  --color-leather-800: #5c3d37;
+  --color-leather-900: #503633;
+  --color-leather-950: #2d1c1b;
+
+  --color-sherpa-blue-50: #ecffff;
+  --color-sherpa-blue-100: #bdfaff;
+  --color-sherpa-blue-200: #7bf4ff;
+  --color-sherpa-blue-300: #31ebff;
+  --color-sherpa-blue-400: #00efff;
+  --color-sherpa-blue-500: #00e6ed;
+  --color-sherpa-blue-600: #00b4bf;
+  --color-sherpa-blue-700: #008d97;
+  --color-sherpa-blue-800: #006d77;
+  --color-sherpa-blue-900: #004950;
+  --color-sherpa-blue-950: #00363d;
+
+  --font-aboreto: "Aboreto", system-ui;
+  --font-abyssinica: "Abyssinica SIL", serif;
+}
