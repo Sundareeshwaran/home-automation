@@ -10,12 +10,14 @@ const Hero = () => {
     jsConfetti.addConfetti({
       confettiNumber: 500,
       confettiColors: [
-        "#eae1d7",
-        "#d6c5b2",
-        "#bea086",
-        "#5c3d37",
-        "#6c463c",
-        "#865b48",
+        "#f8f0e3",
+        "#e6d2b9",
+        "#cd853f",
+        "#b8860b",
+        "#8b4513",
+        "#556b2f",
+        "#d19a32",
+        "#a52a2a",
       ],
       confettiRadius: 5,
     });
