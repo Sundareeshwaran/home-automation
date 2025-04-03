@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { motion } from "motion/react";
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -32,7 +33,14 @@ const Contact = () => {
     <div className="mt-24 px-4 md:px-8 lg:px-16" id="contact">
       {/* Title */}
       <div className="flex flex-col items-center text-3xl md:text-4xl lg:text-5xl text-leather-900">
-        <h1>Contact Us</h1>
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          Contact Us
+        </motion.h1>
       </div>
 
       {/* Form */}
@@ -41,21 +49,33 @@ const Contact = () => {
         className="flex flex-col items-center justify-center gap-4 font-abyssinica w-full md:w-3/4 lg:w-1/2 mx-auto mt-8"
       >
         {/* Input Fields */}
-        <input
+        <motion.input
+          initial={{ opacity: 0, x: 20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           className="w-full bg-leather-100 text-base md:text-xl placeholder:text-sherpa-blue-900/75 text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none capitalize"
           type="text"
           name="Name"
           placeholder="Name"
           required
         />
-        <input
+        <motion.input
+          initial={{ opacity: 0, x: -20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           className="w-full bg-leather-100 text-base md:text-xl placeholder:text-sherpa-blue-900/75 text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none"
           type="tel"
           name="Phone"
           placeholder="Phone"
           required
         />
-        <input
+        <motion.input
+          initial={{ opacity: 0, x: 20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           className="w-full bg-leather-100 text-base md:text-xl placeholder:text-sherpa-blue-900/75 text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none"
           type="email"
           name="Email"
@@ -65,14 +85,22 @@ const Contact = () => {
 
         {/* City & Zipcode */}
         <div className="flex flex-row w-full gap-4">
-          <input
+          <motion.input
+            initial={{ opacity: 0, x: -20 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="w-full bg-leather-100 text-base md:text-xl placeholder:text-sherpa-blue-900/75 text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none capitalize"
             type="text"
             name="City"
             placeholder="City"
             required
           />
-          <input
+          <motion.input
+            initial={{ opacity: 0, x: 20 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="w-full bg-leather-100 text-base md:text-xl placeholder:text-sherpa-blue-900/75 text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none"
             type="text"
             name="Zipcode"
@@ -83,7 +111,11 @@ const Contact = () => {
 
         {/* Building & Automation Type */}
         <div className="flex flex-row w-full gap-4">
-          <select
+          <motion.select
+            initial={{ opacity: 0, x: -20 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="w-full bg-leather-100 text-base md:text-xl text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none"
             name="Building Type"
             required
@@ -91,8 +123,12 @@ const Contact = () => {
             <option value="New Building">New Building</option>
             <option value="Existing Building">Existing Building</option>
             <option value="Renovation Building">Renovation Building</option>
-          </select>
-          <select
+          </motion.select>
+          <motion.select
+            initial={{ opacity: 0, x: 20 }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="w-full bg-leather-100 text-base md:text-xl text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none"
             name="Automation Type"
             required
@@ -103,17 +139,21 @@ const Contact = () => {
             <option value="Villa">Villa</option>
             <option value="Apartment">Apartment</option>
             <option value="Others">Others</option>
-          </select>
+          </motion.select>
         </div>
 
         {/* Message Textarea */}
-        <textarea
+        <motion.textarea
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           name="Comments"
           cols="15"
           rows="5"
           placeholder="What is your requirement?"
           className="w-full bg-leather-100 text-base md:text-xl placeholder:text-sherpa-blue-900/75 text-sherpa-blue-900 px-4 py-3 md:px-6 md:py-4 rounded-xl outline-none resize-none"
-        ></textarea>
+        ></motion.textarea>
 
         {/* Submit Button */}
         <button

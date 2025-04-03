@@ -1,26 +1,52 @@
 import React from "react";
 import { imageList } from "../assets/assets";
 import ImageSlider from "../utils/ImageSlider";
+import { motion } from "motion/react";
 
 const ProductService = () => {
   return (
     <div className="mt-24 px-4 md:px-8 lg:px-16" id="product&service">
       {/* Title, Quotes, Passages */}
       <div className="flex flex-col items-center text-3xl md:text-4xl lg:text-5xl">
-        <h1>Product & Service</h1>
-        <p className="text-sm md:text-base font-abyssinica my-4 md:my-8 text-sherpa-blue-800/75 w-full md:w-3/4 lg:w-1/2 text-center">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          Product & Service
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="text-sm md:text-base font-abyssinica my-4 md:my-8 text-sherpa-blue-800/75 w-full md:w-3/4 lg:w-1/2 text-center"
+        >
           We offer our best service and quality products to our customer.
-        </p>
-        <h3 className="font-abyssinica text-lg md:text-2xl lg:text-3xl w-full md:w-[800px] text-center">
+        </motion.p>
+        <motion.h3
+          initial={{ opacity: 0, x: 20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="font-abyssinica text-lg md:text-2xl lg:text-3xl w-full md:w-[800px] text-center"
+        >
           Customer{" "}
           <span className="text-sherpa-blue-800 underline">service</span>{" "}
           shouldn't just be a department, it should be the entire company.
-        </h3>
+        </motion.h3>
       </div>
 
       {/* Product Information */}
 
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-start mx-auto mt-12 max-w-6xl w-full bg-leather-100 p-6 rounded-3xl space-y-6 md:space-y-0 md:space-x-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row justify-center items-center md:items-start mx-auto mt-12 max-w-6xl w-full bg-leather-100 p-6 rounded-3xl space-y-6 md:space-y-0 md:space-x-6"
+      >
         <div className="font-abyssinica text-leather-600 p-2 text-center md:text-left flex-1">
           <h1 className="mb-6 text-2xl sm:text-3xl md:text-4xl">Product</h1>
           <p className="text-base sm:text-lg md:text-xl text-sherpa-blue-900/75 max-w-2xl mx-auto md:mx-0">
@@ -37,11 +63,17 @@ const ProductService = () => {
             alt="Smart Home Product"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Service Information */}
 
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-start mx-auto mt-12 max-w-6xl w-full bg-leather-100 p-6 rounded-3xl space-y-6 md:space-y-0 md:space-x-6">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row justify-center items-center md:items-start mx-auto mt-12 max-w-6xl w-full bg-leather-100 p-6 rounded-3xl space-y-6 md:space-y-0 md:space-x-6"
+      >
         <div className="font-abyssinica text-leather-600 p-2 text-center md:text-left flex-1">
           <h1 className="mb-6 text-2xl sm:text-3xl md:text-4xl">Service</h1>
           <p className="text-base sm:text-lg md:text-xl text-sherpa-blue-900/75 max-w-2xl mx-auto md:mx-0">
@@ -58,7 +90,7 @@ const ProductService = () => {
             alt="Smart Home Service"
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Before and After slider image */}
 

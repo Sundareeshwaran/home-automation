@@ -1,9 +1,16 @@
 import React from "react";
 import { imageList } from "../assets/assets.js";
+import { motion } from "motion/react";
 
 const Footer = () => {
   return (
-    <div className="bg-leather-50 py-10 mt-10 px-4 md:px-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="bg-leather-50 py-10 mt-10 px-4 md:px-10"
+    >
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl gap-10 mb-5">
           {/* Logo and Description */}
@@ -36,7 +43,7 @@ const Footer = () => {
           © {new Date().getFullYear()} V-Smartechnologies. All Rights Reserved.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

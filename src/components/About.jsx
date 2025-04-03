@@ -1,23 +1,49 @@
 import React from "react";
 import { imageList } from "../assets/assets";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
     <div className="mt-24 px-4 md:px-8 lg:px-16" id="about">
       {/* Title, Quotes, Passages */}
       <div className="flex flex-col items-center text-3xl md:text-4xl lg:text-5xl text-leather-900">
-        <h1>About</h1>
-        <p className="text-sm md:text-base font-abyssinica my-4 md:my-8 text-sherpa-blue-800/75 w-full md:w-3/4 lg:w-1/2 text-center">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          About
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="text-sm md:text-base font-abyssinica my-4 md:my-8 text-sherpa-blue-800/75 w-full md:w-3/4 lg:w-1/2 text-center"
+        >
           We are committed to quality, innovation, and customer satisfaction.
-        </p>
-        <h3 className="font-abyssinica text-lg md:text-2xl lg:text-3xl w-full md:w-[800px] text-center text-leather-900">
+        </motion.p>
+        <motion.h3
+          initial={{ opacity: 0, x: 20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="font-abyssinica text-lg md:text-2xl lg:text-3xl w-full md:w-[800px] text-center text-leather-900"
+        >
           Our <span className="text-sherpa-blue-800 underline">passion</span> is
           to bring cutting-edge smart home technology to your doorstep, today.
-        </h3>
+        </motion.h3>
       </div>
 
       {/* About Section */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 mx-auto mt-12 bg-leather-100 text-sherpa-blue-900/75 px-6 md:px-16 py-6 rounded-3xl shadow-md">
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 mx-auto mt-12 bg-leather-100 text-sherpa-blue-900/75 px-6 md:px-16 py-6 rounded-3xl shadow-md"
+      >
         <div className="flex flex-col items-center gap-8">
           <img
             className="w-40 md:w-64 rounded-full object-cover"
@@ -69,7 +95,7 @@ const About = () => {
             customer enjoys a truly connected and convenient lifestyle.
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

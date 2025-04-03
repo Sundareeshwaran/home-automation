@@ -1,27 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { imageList } from "../assets/assets.js";
 import { Menu, X } from "lucide-react";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScroll, setIsScroll] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScroll(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
-    <div
-      className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        isScroll ? "bg-transparent backdrop-blur-lg" : "bg-leather-100/20"
-      }`}
-    >
+    <div className="fixed top-0 left-0 w-full z-50 transition-all bg-transparent backdrop-blur-lg">
       <div className="flex justify-between items-center px-6 md:px-12 py-4">
         {/* Logo */}
         <div className="md:w-28 sm:w-20 w-16">
@@ -32,30 +18,31 @@ const Navbar = () => {
 
         {/* Menu for larger screens */}
         <ul className="hidden md:flex gap-10 text-leather-900 md:text-[16px] text-[8px]">
-          <li>
+          <motion.li whileHover={{ translateY: -1.5 }}>
             <a href="#howitswork">How it works</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ translateY: -1.5 }}>
             <a href="#whyus">Why Us?</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ translateY: -1.5 }}>
             <a href="#product&service">P&S</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ translateY: -1.5 }}>
             <a href="#testimonials">Testimonials</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ translateY: -1.5 }}>
             <a href="#about">About</a>
-          </li>
+          </motion.li>
         </ul>
 
         {/* Contact Button */}
-        <a
+        <motion.a
+          whileHover={{ scale: 1.05, rotate: 1 }}
           href="#contact"
           className="hidden md:block font-abyssinica text-lg bg-leather-700 text-white px-4 py-2 rounded-lg"
         >
           Contact Us
-        </a>
+        </motion.a>
 
         {/* Hamburger Icon for mobile */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -73,11 +60,11 @@ const Navbar = () => {
           <X size={28} />
         </button>
         <ul className="flex flex-col gap-4 text-lg text-leather-900 mt-6 h-screen">
-          <li>
+          <motion.li>
             <a onClick={() => setIsOpen(false)} href="#howitswork">
               How it works
             </a>
-          </li>
+          </motion.li>
           <li>
             <a onClick={() => setIsOpen(false)} href="#whyus">
               Why Us?

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { imageList, slideList } from "../assets/assets.js";
+import { motion } from "motion/react";
 
 const Project = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,16 +34,35 @@ const Project = () => {
     <div className="mt-24 px-4 md:px-8 lg:px-16">
       {/* Title, Quotes, Passages */}
       <div className="flex flex-col items-center text-3xl md:text-4xl lg:text-5xl">
-        <h1>Project List</h1>
-        <p className="text-sm md:text-base font-abyssinica my-4 md:my-8 text-sherpa-blue-800/75 text-center">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          Project List
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="text-sm md:text-base font-abyssinica my-4 md:my-8 text-sherpa-blue-800/75 text-center"
+        >
           We're committed to exceeding customer expectations and providing
           exceptional service.
-        </p>
-        <h3 className="font-abyssinica text-xl md:text-2xl lg:text-3xl w-full md:w-[600px] text-center">
+        </motion.p>
+        <motion.h3
+          initial={{ opacity: 0, x: 20 }}
+          transition={{ duration: 1 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="font-abyssinica text-xl md:text-2xl lg:text-3xl w-full md:w-[600px] text-center"
+        >
           Automate your home your way, without the{" "}
           <span className="text-sherpa-blue-800 underline">premium</span> price
           tag
-        </h3>
+        </motion.h3>
       </div>
 
       {/* Project Slider */}
@@ -82,11 +102,11 @@ const Project = () => {
 
       {/* Left and Right Arrows */}
       <div className="flex justify-center md:justify-end gap-5 my-4">
-        <button onClick={prevProject} className="p-2 bg-gray-200 rounded-full">
-          <img className="w-4 md:w-5" src={imageList.left_arrow} alt="" />
+        <button onClick={prevProject} className="cursor-pointer">
+          <img className="w-3 md:w-4" src={imageList.left_arrow} alt="" />
         </button>
-        <button onClick={nextProject} className="p-2 bg-gray-200 rounded-full">
-          <img className="w-4 md:w-5" src={imageList.right_arrow} alt="" />
+        <button onClick={nextProject} className="cursor-pointer">
+          <img className="w-3 md:w-4" src={imageList.right_arrow} alt="" />
         </button>
       </div>
     </div>
