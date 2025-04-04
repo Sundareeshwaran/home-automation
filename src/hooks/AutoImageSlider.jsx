@@ -30,6 +30,7 @@ function AutoImageSlider({ autoSlideList }) {
       <div ref={sliderRef} className="w-full h-full">
         {autoSlideList.length > 0 && (
           <img
+            loading="lazy"
             className="w-full h-auto md:h-full object-cover rounded-2xl shadow-[2px_2px_16px_#000000aa]"
             src={autoSlideList[currentImageIndex].image}
             alt="Consult Image"

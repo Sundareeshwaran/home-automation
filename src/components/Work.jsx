@@ -75,6 +75,7 @@ const Work = () => {
               className="relative w-full max-w-[90%] md:max-w-[757px]"
             >
               <img
+                loading="lazy"
                 className="w-full h-auto object-cover rounded-2xl shadow-lg"
                 src={step.image}
                 alt={step.title}

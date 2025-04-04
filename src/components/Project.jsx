@@ -79,6 +79,7 @@ const Project = () => {
               className="relative flex-shrink-0 w-full md:w-1/2 lg:w-1/3"
             >
               <img
+                loading="lazy"
                 className="w-full h-auto my-4 rounded"
                 src={item.image}
                 alt={item.name}

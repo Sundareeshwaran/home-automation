@@ -58,6 +58,7 @@ const ProductService = () => {
         </div>
         <div className="flex-1 flex justify-center">
           <img
+            loading="lazy"
             className="w-72 sm:w-96 md:w-full max-w-xl rounded-2xl"
             src={imageList.productInfo}
             alt="Smart Home Product"
@@ -85,6 +86,7 @@ const ProductService = () => {
         </div>
         <div className="flex-1 flex justify-center">
           <img
+            loading="lazy"
             className="w-72 sm:w-96 md:w-full max-w-xl rounded-2xl"
             src={imageList.serviceInfo}
             alt="Smart Home Service"
